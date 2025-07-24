@@ -136,6 +136,21 @@
 	customizer_choices = list(/datum/customizer_choice/organ/tail/tiefling)
 	allows_disabling = FALSE
 
+/datum/customizer/organ/tail/dullahan
+	customizer_choices = list(/datum/customizer_choice/organ/tail/dullahan)
+	allows_disabling = TRUE
+	default_disabled = TRUE
+
+/datum/customizer_choice/organ/tail/dullahan
+	name = "Dullahan Tail"
+	organ_type = /obj/item/organ/tail/dullahan
+	generic_random_pick = TRUE
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/dullahan,
+		/datum/sprite_accessory/tail/dullahan/heart,
+		)
+	allows_accessory_color_customization = TRUE
+
 /datum/customizer_choice/organ/tail/tiefling
 	name = "Tiefling Tail"
 	organ_type = /obj/item/organ/tail/tiefling

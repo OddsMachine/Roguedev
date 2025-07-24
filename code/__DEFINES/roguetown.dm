@@ -122,6 +122,7 @@
 	/datum/species/halforc,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
+	/datum/species/dullahan,\
 )
 
 #define RACES_RESPECTED \
@@ -136,10 +137,11 @@
 #define RACES_NEUTRAL \
     /datum/species/construct/metal,\
     /datum/species/aasimar,\
-
+	
 #define RACES_SHUNNED \
     /datum/species/vulpkanin,\
     /datum/species/lupian,\
+	/datum/species/dullahan,\
     /datum/species/anthromorphsmall,\
     /datum/species/kobold,\
     /datum/species/moth,\
@@ -179,6 +181,7 @@
 	/datum/species/elf/wood,\
 	/datum/species/dwarf/mountain,\
 	/datum/species/tieberian,\
+	/datum/species/dullahan,\
 	/datum/species/aasimar,\
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
@@ -202,6 +205,7 @@
 	/datum/species/elf/wood,\
 	/datum/species/dwarf/mountain,\
 	/datum/species/tieberian,\
+	/datum/species/dullahan,\
 	/datum/species/aasimar,\
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
@@ -225,6 +229,7 @@
 	/datum/species/elf/dark,\
 	/datum/species/elf/wood,\
 	/datum/species/tieberian,\
+	/datum/species/dullahan,\
 	/datum/species/aasimar,\
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
@@ -242,6 +247,7 @@
 #define HUMANLIKE_RACE_TYPES list(\
 	/datum/species/human/northern,\
 	/datum/species/tieberian,\
+	/datum/species/dullahan,\
 	/datum/species/aasimar,\
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\

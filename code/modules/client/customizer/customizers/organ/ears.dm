@@ -253,3 +253,15 @@
 		/datum/sprite_accessory/ears/elf,
 		/datum/sprite_accessory/ears/elfw,
 		)
+/datum/customizer/organ/ears/dullahan
+	customizer_choices = list(/datum/customizer_choice/organ/ears/dullahan)
+	allows_disabling = TRUE
+	default_disabled = TRUE
+
+/datum/customizer_choice/organ/ears/dullahan
+	name = "Dullahan Ears"
+	organ_type = /obj/item/organ/ears
+	sprite_accessories = list(
+		/datum/sprite_accessory/ears/elf,
+		/datum/sprite_accessory/ears/elfw,
+		)
