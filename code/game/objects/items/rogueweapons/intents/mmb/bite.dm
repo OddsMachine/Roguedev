@@ -53,7 +53,6 @@
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("I don't want to harm [src]!"))
 		return FALSE
-
 	if(!user.can_bite())
 		to_chat(user, span_warning("My mouth has something in it."))
 		return FALSE
@@ -123,7 +122,6 @@
 					caused_wound?.werewolf_infect_attempt()
 					if(prob(30))
 						user.werewolf_feed(bite_victim, 10)
-
 			/*
 				ZOMBIE INFECTION VIA BITE
 			*/
@@ -132,7 +130,6 @@
 				zombie_antag.last_bite = world.time
 				if(bite_victim.zombie_infect_attempt())   // infect_attempt on bite
 					to_chat(user, span_danger("You feel your gift trickling from your mouth into [bite_victim]'s wound..."))
-
 	var/obj/item/grabbing/bite/B = new()
 	user.equip_to_slot_or_del(B, SLOT_MOUTH)
 	if(user.mouth == B)

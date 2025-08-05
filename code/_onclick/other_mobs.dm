@@ -164,6 +164,7 @@
 			var/obj/item/I = H.get_active_held_item()
 			H.givingto = src
 			H.lastgiveaction = world.time
+			H.lastgiveaction = world.time
 			to_chat(src, span_notice("[H.name] offers [I] to me."))
 			to_chat(H, span_notice("I offer [I] to [src.name]."))
 		else
