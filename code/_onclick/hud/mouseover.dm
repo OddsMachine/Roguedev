@@ -135,7 +135,7 @@
 /mob/handle_mouseover(location,control,params)
 	var/mob/p = usr
 
-	if(QDELETED(src))
+	if(QDELETED(src) || !p)
 		return FALSE
 	if(p.client)
 		var/atom/AT = get_turf(p.client.eye)

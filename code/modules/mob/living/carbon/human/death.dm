@@ -31,10 +31,6 @@
 	if(stat == DEAD)
 		return
 
-	var/datum/species/dullahan/user_species = src.dna.species
-	if(user_species.headless)
-		user_species.soul_light_off()
-		
 	var/area/A = get_area(src)
 
 	if(client)

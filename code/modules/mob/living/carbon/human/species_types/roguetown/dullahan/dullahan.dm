@@ -151,7 +151,6 @@
 	RegisterSignal(user, COMSIG_LIVING_REVIVE, PROC_REF(on_aheal))
 	my_head = user.get_bodypart(BODY_ZONE_HEAD)
 	RegisterSignal(my_head, COMSIG_QDELETING, PROC_REF(on_head_destroyed))
-
 /datum/species/dullahan/on_species_loss(mob/living/carbon/user)
 	. = ..()
 
@@ -166,16 +165,24 @@
 			user.death()
 
 	UnregisterSignal(my_head, COMSIG_QDELETING)
+	soul_light_off()
+	mob_light_obj = null
 	my_head = null
 
 /datum/species/dullahan/proc/on_aheal(datum/source, full_heal, admin_revive)
 	if(!admin_revive)
 		return
-	var/mob/living/carbon/user = my_head.original_owner
+	var/mob/living/carbon/human/user = my_head.original_owner
 	if(!headless)
 		return
 
-	my_head.attach_limb(user)
+	if(my_head)
+		my_head.attach_limb(user)
+	else
+		// All related procs are called before limbs and organs regenerate.
+		user.regenerate_limbs()
+		user.regenerate_organs()
+		my_head = user.get_bodypart_shallow(BODY_ZONE_HEAD)
 	headless = FALSE
 
 	var/obj/item/organ/dullahan_vision/vision = user.getorganslot(ORGAN_SLOT_HUD)
@@ -273,3 +280,9 @@
 			return FALSE
 		return equip_delay_self_check(item, user, bypass_equip_delay_self)
 	return ..()
+
+/datum/species/dullahan/spec_death(gibbed, mob/living/carbon/human/user)
+	debug_world("Dead: [user.stat == DEAD]")
+	if(headless)
+		soul_light_off()
+		user.update_body()

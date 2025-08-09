@@ -71,6 +71,8 @@
 					if(HAS_TRAIT(CA, TRAIT_STEELHEARTED))
 						continue
 				CA.add_stress(stress2give)
+	
+	grabbedby = SANITIZE_LIST(grabbedby)
 	if(grabbedby)
 		if(dam_type != BURN)
 			for(var/obj/item/grabbing/grab in grabbedby)
@@ -83,12 +85,10 @@
 				drop_limb()
 				human.put_in_hand(src, hand_index)
 
-				qdel(grabbedby)
-				grabbedby = null
+				grabbedby.Cut()
 				return TRUE
 
-		qdel(grabbedby)
-		grabbedby = null
+		grabbedby.Cut()
 
 	drop_limb()
 	if(dam_type == BURN)
